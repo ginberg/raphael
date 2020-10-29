@@ -1,0 +1,7 @@
+dependencies:
+ - name: raphael
+   version: 2.3.0
+   src: htmlwidgets/lib/raphael-2.3.0
+   script:
+      - raphael.js
+      - plugins/piechart.js

@@ -1,0 +1,21 @@
+Package: raphael
+Title: Raphael htmlwidget
+Version: 0.0.1.9000
+Authors@R: person("Ger", "Inberg", email = "ginberg@gmail.com", role = c("aut", "cre"))
+Description: htmlwidget for Raphael charts.
+Depends:
+    R (>= 3.3.2)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    htmlwidgets,
+    magrittr,
+    dplyr,
+    methods,
+    igraph
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+URL: https://gerinberg.com/htmlwidgets/raphael/
+BugReports: https://github.com/ginberg/raphael/issues
+
