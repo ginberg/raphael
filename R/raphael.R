@@ -9,7 +9,10 @@
 #' @param elementId id of div containing chart.
 #'
 #' @examples
-#' raphael(mtcars, "test)
+#' library(dplyr)
+#' library(tibble)
+#'
+#' mtcars %>% rownames_to_column("names") %>% raphael(x = names, y = carb, type = "pie")
 #'
 #' @import htmlwidgets
 #'
