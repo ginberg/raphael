@@ -20,7 +20,7 @@ HTMLWidgets.widget({
         // create chart
         chart = Raphael(el.id, 900, 600);
         if (x.type == "pie") {
-          chart.pieChart(350, 350, 200, x.values, x.labels, "#fff");
+          chart.pieChart(350, 250, 200, x.values, x.labels, "#fff");
         }
       },
 

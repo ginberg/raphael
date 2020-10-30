@@ -3,10 +3,10 @@ library(raphael)
 library(tibble)
 library(dplyr)
 
-data <- mtcars %>% rownames_to_column("names")
+data <- mtcars %>% rownames_to_column("names") %>% arrange(-hp)
 
 ui <- pageWithSidebar(
-        headerPanel("Pie Chart"),
+        headerPanel("Pie Chart - mtcars horsepower"),
         sidebarPanel(
             selectizeInput("names", "Cars", data$names, data$names[1:4], multiple = TRUE)
         ),
