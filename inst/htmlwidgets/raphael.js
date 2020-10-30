@@ -12,7 +12,12 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
-        // parse x
+        // remove existing element
+        try {var element = document.getElementById(el.id);
+             element.innerHTML = '';}
+        catch(err) {/*do nothing*/}
+
+        // create chart
         chart = Raphael(el.id, 900, 600);
         if (x.type == "pie") {
           chart.pieChart(350, 350, 200, x.values, x.labels, "#fff");
