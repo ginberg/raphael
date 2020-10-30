@@ -4,8 +4,14 @@ Basic example.
 
 ```r
 library(raphael)
+library(dplyr)
+library(tibble)
 
-# TODO
+mtcars %>% 
+  rownames_to_column("names") %>% 
+  arrange(-hp) %>% 
+  head(5) %>% 
+  raphael(x = names, y = hp, type = "pie")
 ```
 
 

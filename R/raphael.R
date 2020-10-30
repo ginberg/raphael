@@ -4,6 +4,7 @@
 #'
 #' @param data data.frame containing data to plot.
 #' @param x variable column.
+#' @param y variable column.
 #' @param width,height dimensions of chart.
 #' @param elementId id of div containing chart.
 #'
@@ -18,12 +19,14 @@
 #' @importFrom methods is
 #'
 #' @export
-raphael <- function(data, x, width = NULL, height = NULL, elementId = NULL) {
+raphael <- function(data, x, y, type = "pie", width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
   x = list(
-    data = data,
-    x = x
+    data   = data,
+    labels = data[[deparse(substitute(x))]],
+    values = data[[deparse(substitute(y))]],
+    type   = type
   )
 
   # create widget
