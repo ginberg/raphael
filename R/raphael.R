@@ -66,7 +66,7 @@ raphaelOutput <- function(outputId, width = '100%', height = '400px'){
 
 #' @rdname raphael-shiny
 #' @export
-renderraphael <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderRaphael <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
   htmlwidgets::shinyRenderWidget(expr, raphaelOutput, env, quoted = TRUE)
 }

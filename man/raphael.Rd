@@ -28,3 +28,10 @@ raphael(
 \description{
 Initiate a raphael graph.
 }
+\examples{
+library(dplyr)
+library(tibble)
+
+mtcars \%>\% rownames_to_column("names") \%>\% raphael(x = names, y = carb, type = "pie")
+
+}

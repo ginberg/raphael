@@ -3,7 +3,6 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, stroke) {
         rad = Math.PI / 180,
         chart = this.set();
     function sector(cx, cy, r, startAngle, endAngle, params) {
-        console.log(params.fill);
         var x1 = cx + r * Math.cos(-startAngle * rad),
             x2 = cx + r * Math.cos(-endAngle * rad),
             y1 = cy + r * Math.sin(-startAngle * rad),

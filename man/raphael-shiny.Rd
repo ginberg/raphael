@@ -3,12 +3,12 @@
 \name{raphael-shiny}
 \alias{raphael-shiny}
 \alias{raphaelOutput}
-\alias{renderraphael}
+\alias{renderRaphael}
 \title{Shiny bindings for raphael}
 \usage{
 raphaelOutput(outputId, width = "100\%", height = "400px")
 
-renderraphael(expr, env = parent.frame(), quoted = FALSE)
+renderRaphael(expr, env = parent.frame(), quoted = FALSE)
 }
 \arguments{
 \item{outputId}{output variable to read from}
