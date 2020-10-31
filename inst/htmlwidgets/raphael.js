@@ -18,9 +18,17 @@ HTMLWidgets.widget({
         catch(err) {/*do nothing*/}
 
         // create chart
-        chart = Raphael(el.id, 900, 600);
+        if (!width) {
+          width = 900;
+        }
+        if (!height) {
+          height = 600;
+        }
+        chart = Raphael(el.id, width, height);
         if (x.type == "pie") {
-          chart.pieChart(350, 250, 200, x.values, x.labels, "#fff");
+          chart.pieChart(300, 300, 200, x.values, x.labels, "#fff");
+        } if (x.type == "image") {
+          chart.imageChart(x.src, width/2, height/2, "test");
         }
       },
 

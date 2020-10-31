@@ -5,3 +5,4 @@ dependencies:
    script:
       - raphael.js
       - plugins/piechart.js
+      - plugins/imagechart.js
