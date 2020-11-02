@@ -2,11 +2,6 @@
 #'
 #' Initiate a raphael graph.
 #'
-#' @param data data.frame containing data to plot.
-#' @param x variable column.
-#' @param y variable column.
-#' @param src image source.
-#' @param type type of chart.
 #' @param width,height dimensions of chart.
 #' @param elementId id of div containing chart.
 #'
@@ -14,7 +9,13 @@
 #' library(dplyr)
 #' library(tibble)
 #'
-#' mtcars %>% rownames_to_column("names") %>% raphael(x = names, y = carb, type = "pie")
+#' raphael() %>%
+#'  r_pie(mtcars %>%
+#'          rownames_to_column("names") %>%
+#'          arrange(-hp) %>%
+#'          head(5),
+#'        x = names,
+#'        y = hp)
 #'
 #' @import htmlwidgets
 #'
@@ -24,16 +25,10 @@
 #' @importFrom methods is
 #'
 #' @export
-raphael <- function(data = NULL, x = NULL, y = NULL, src = NULL, type = "pie", width = NULL, height = NULL, elementId = NULL) {
+raphael <- function(width = NULL, height = NULL, elementId = NULL) {
 
   # forward options using x
-  x = list(
-    data   = data,
-    labels = data[[deparse(substitute(x))]],
-    values = data[[deparse(substitute(y))]],
-    type   = type,
-    src    = src
-  )
+  x = list()
 
   # create widget
   htmlwidgets::createWidget(

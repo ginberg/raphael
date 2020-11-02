@@ -4,28 +4,9 @@
 \alias{raphael}
 \title{Initiate a raphael.}
 \usage{
-raphael(
-  data = NULL,
-  x = NULL,
-  y = NULL,
-  src = NULL,
-  type = "pie",
-  width = NULL,
-  height = NULL,
-  elementId = NULL
-)
+raphael(width = NULL, height = NULL, elementId = NULL)
 }
 \arguments{
-\item{data}{data.frame containing data to plot.}
-
-\item{x}{variable column.}
-
-\item{y}{variable column.}
-
-\item{src}{image source.}
-
-\item{type}{type of chart.}
-
 \item{width, height}{dimensions of chart.}
 
 \item{elementId}{id of div containing chart.}
@@ -37,6 +18,12 @@ Initiate a raphael graph.
 library(dplyr)
 library(tibble)
 
-mtcars \%>\% rownames_to_column("names") \%>\% raphael(x = names, y = carb, type = "pie")
+raphael() \%>\%
+ r_pie(mtcars \%>\%
+         rownames_to_column("names") \%>\%
+         arrange(-hp) \%>\%
+         head(5),
+       x = names,
+       y = hp)
 
 }

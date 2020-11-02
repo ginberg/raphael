@@ -3,6 +3,8 @@
 export("%>%")
 export(group_by)
 export(group_by_)
+export(r_image)
+export(r_pie)
 export(raphael)
 export(raphaelOutput)
 export(renderRaphael)

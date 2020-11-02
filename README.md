@@ -8,14 +8,17 @@ library(dplyr)
 library(tibble)
 
 # pie chart
-mtcars %>% 
-  rownames_to_column("names") %>% 
-  arrange(-hp) %>% 
-  head(5) %>% 
-  raphael(x = names, y = hp, type = "pie")
+raphael() %>%
+  r_pie(mtcars %>% 
+          rownames_to_column("names") %>% 
+          arrange(-hp) %>% 
+          head(5),
+        x = names, 
+        y = hp)
   
 # reflected image
-raphael(type = "image", src = "https://dmitrybaranovskiy.github.io/raphael/bd.jpg")
+raphael() %>%
+  r_image(src = "https://dmitrybaranovskiy.github.io/raphael/bd.jpg")
 ```
 
 
