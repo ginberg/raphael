@@ -5,9 +5,10 @@
 \title{Initiate a raphael.}
 \usage{
 raphael(
-  data,
-  x,
-  y,
+  data = NULL,
+  x = NULL,
+  y = NULL,
+  src = NULL,
   type = "pie",
   width = NULL,
   height = NULL,
@@ -20,6 +21,10 @@ raphael(
 \item{x}{variable column.}
 
 \item{y}{variable column.}
+
+\item{src}{image source.}
+
+\item{type}{type of chart.}
 
 \item{width, height}{dimensions of chart.}
 

@@ -12,6 +12,7 @@ Imports:
     htmlwidgets,
     magrittr,
     dplyr,
+    tibble,
     methods,
     igraph
 Roxygen: list(markdown = TRUE)
